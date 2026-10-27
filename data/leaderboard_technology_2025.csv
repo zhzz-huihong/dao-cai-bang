@@ -1,0 +1,10 @@
+﻿overall_rank,industry_rank,company_id,display_name,industry,primary_archetype,overall_score,wealth_creation_score,employee_welfare_score,responsible_governance_score,red_flag_deduction,data_completeness,ranking_eligible,data_notice
+2,1,SYN-TEC-005,方舟智能,technology,持续改善型,78.6,19.9,47.1,11.6,0.0,0.8696,true,模拟数据，不对应真实企业
+3,2,SYN-TEC-008,原点科技,technology,低财富、高善待,74.1,14.5,51.0,8.5,0.0,0.913,true,模拟数据，不对应真实企业
+4,3,SYN-TEC-007,天穹互联,technology,股东优先型,73.8,22.2,39.6,12.0,0.0,1.0,true,模拟数据，不对应真实企业
+5,4,SYN-TEC-009,深林数字,technology,数据透明型,72.4,10.7,49.1,12.6,0.0,0.913,true,模拟数据，不对应真实企业
+9,5,SYN-TEC-001,云帆科技,technology,高财富、高分享,69.1,19.7,40.4,9.0,0.0,0.913,true,模拟数据，不对应真实企业
+10,6,SYN-TEC-002,星桥软件,technology,共同成长型,69.0,9.0,47.2,12.8,0.0,1.0,true,模拟数据，不对应真实企业
+14,7,SYN-TEC-003,极光网络,technology,高薪、高工时,60.4,11.0,37.0,12.4,0.0,1.0,true,模拟数据，不对应真实企业
+19,8,SYN-TEC-006,知微云计算,technology,高管差距型,53.9,16.1,28.3,9.5,0.0,0.7391,true,模拟数据，不对应真实企业
+23,9,SYN-TEC-004,蓝海数据,technology,高财富、低分享,49.5,10.8,28.1,10.6,0.0,0.8696,true,模拟数据，不对应真实企业
