@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="道财榜模拟数据演示版：用可解释数据观察企业财富创造、员工分享与劳动者福祉。">
+  <meta name="theme-color" content="#f2ecdf">
+  <title>道财榜 · 模拟数据演示版</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="demo-ribbon" role="note">
+    <span>演示版本</span>
+    所有企业与数据均为模拟内容，不对应任何真实企业
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="道财榜首页">
+      <span class="brand-mark"><b>道</b><i>财</i></span>
+      <span><strong>道财榜</strong><small>财富有数，取财有道</small></span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="#ranking">榜单</a>
+      <a href="#compare">比较</a>
+      <a href="#method">方法</a>
+      <a href="#about">关于</a>
+    </nav>
+    <button class="ghost-button" id="openMethod">如何评分</button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">企业财富分享与员工福祉观察</p>
+        <h1>谁创造了财富，<br><em>谁分享了财富？</em></h1>
+        <p class="hero-lead">道财榜尝试用一套可解释、可复算的方法，把企业的财富创造能力与普通劳动者得到的收入、福利、安全和尊严放在同一张表上。</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#ranking">查看模拟榜单 <span>↓</span></a>
+          <a class="text-link" href="#method">阅读评分方法</a>
+        </div>
+        <div class="hero-note"><span>●</span> 当前为概念验证，不构成投资、求职或消费建议</div>
+      </div>
+      <div class="hero-board" aria-label="榜单摘要">
+        <div class="board-heading"><span>2025</span><strong>道财指数</strong><small>模拟总榜 · TOP 3</small></div>
+        <div id="heroTopThree" class="hero-top-three"></div>
+        <div class="board-footer"><span>评分模型 V1.0</span><span>数据更新 2026.10</span></div>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="数据概览">
+      <div><strong id="eligibleCount">—</strong><span>家进入模拟榜</span></div>
+      <div><strong>3</strong><span>个试点行业</span></div>
+      <div><strong>3</strong><span>年连续数据</span></div>
+      <div><strong>100%</strong><span>合成企业</span></div>
+    </section>
+
+    <section class="ranking-section" id="ranking">
+      <div class="section-heading">
+        <div><p class="eyebrow">2025 SIMULATED RANKING</p><h2>道财模拟总榜</h2></div>
+        <p>不比较企业财富绝对规模，重点观察员工是否分享了企业创造的价值。</p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="搜索模拟企业" autocomplete="off">
+        </label>
+        <div class="filter-group" role="group" aria-label="行业筛选">
+          <button class="filter active" data-industry="all">全部行业</button>
+          <button class="filter" data-industry="manufacturing">制造业</button>
+          <button class="filter" data-industry="technology">互联网与软件</button>
+          <button class="filter" data-industry="retail_logistics_service">零售物流服务</button>
+        </div>
+        <label class="select-wrap">企业原型
+          <select id="archetypeFilter"><option value="all">全部原型</option></select>
+        </label>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>排名</th><th>模拟企业</th><th>道财指数</th><th>财富创造</th><th>员工福祉</th><th>责任治理</th><th>完整度</th><th><span class="sr-only">操作</span></th></tr></thead>
+          <tbody id="rankingBody"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState" hidden>没有符合当前条件的企业。</div>
+      </div>
+      <div class="table-caption"><span>i</span> 点击企业名称查看三年趋势与指标证据。数据完整度低于70%的企业不进入榜单。</div>
+    </section>
+
+    <section class="compare-section" id="compare">
+      <div class="section-heading light">
+        <div><p class="eyebrow">SIDE BY SIDE</p><h2>企业横向比较</h2></div>
+        <p>最多选择三家模拟企业，对比分配、工时、保障和数据完整度。</p>
+      </div>
+      <div id="compareEmpty" class="compare-empty">
+        <span class="compare-glyph">↔</span>
+        <div><strong>尚未选择企业</strong><p>在榜单中点击“加入比较”，从同一行业开始会更有参考意义。</p></div>
+      </div>
+      <div id="compareGrid" class="compare-grid" hidden></div>
+    </section>
+
+    <section class="method-section" id="method">
+      <div class="method-intro">
+        <p class="eyebrow">METHODOLOGY V1.0</p>
+        <h2>一张榜，三把尺</h2>
+        <p>总分不是对企业“好坏”的裁决，而是对公开定义下三组行为结果的结构化观察。</p>
+      </div>
+      <div class="method-grid">
+        <article><span class="method-number">25</span><h3>财富创造质量</h3><p>观察人均产出、盈利质量、经营现金流和就业稳定性，而不是奖励企业体量。</p><ul><li>人均营业收入</li><li>净利润率</li><li>经营现金流率</li><li>就业稳定性</li></ul></article>
+        <article class="featured"><span class="method-number">60</span><h3>员工福祉与分享</h3><p>把基层收入、劳动分配、内部差距、福利、工时、安全与发展放在评分中心。</p><ul><li>基层收入充足度</li><li>劳动分配与共同增长</li><li>工时、安全与福利</li><li>职业发展与尊严</li></ul></article>
+        <article><span class="method-number">15</span><h3>责任治理</h3><p>关注外包劳动者待遇、员工参与机制，以及企业是否愿意透明披露关键数据。</p><ul><li>外包劳动者责任</li><li>员工参与和申诉</li><li>数据透明度</li><li>红线事件扣分</li></ul></article>
+      </div>
+      <div class="method-rule"><strong>重要规则</strong><span>缺失数据不按0分处理</span><span>同行业优先比较</span><span>重大事故独立扣分</span><span>低于70%完整度进入观察组</span></div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div><p class="eyebrow">WHY THIS EXISTS</p><h2>财富不仅有数量，<br>也有去向。</h2></div>
+      <div class="about-copy"><p>道财榜希望讨论的不是“谁最有钱”，而是企业创造财富以后，普通劳动者能否体面生活、共同成长，并被纳入企业责任的边界。</p><p>当前版本使用30家虚构企业和3年合成数据验证产品逻辑。未来只有在数据来源、复核机制和申诉制度成熟后，才会逐步引入真实企业。</p><a href="#top" class="text-link">回到顶部 ↑</a></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark"><b>道</b><i>财</i></span><span><strong>道财榜</strong><small>模拟数据演示版</small></span></div>
+    <p>本网站中的企业、经营数据、员工数据、评分及排名均为虚构或合成内容。</p>
+    <span>© 2026 道财榜概念验证</span>
+  </footer>
+
+  <div id="compareTray" class="compare-tray" hidden>
+    <div><strong>企业比较</strong><span id="compareNames"></span></div>
+    <div><button id="clearCompare" class="tray-clear">清空</button><a href="#compare" class="tray-button">查看比较 <span id="compareCount">0</span>/3</a></div>
+  </div>
+
+  <dialog id="companyDialog" class="company-dialog">
+    <button class="dialog-close" aria-label="关闭详情">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>

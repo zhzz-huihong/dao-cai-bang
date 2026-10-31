@@ -1,0 +1,4 @@
+﻿overall_rank,industry_rank,company_id,display_name,industry,primary_archetype,overall_score,wealth_creation_score,employee_welfare_score,responsible_governance_score,red_flag_deduction,data_completeness,ranking_eligible,data_notice
+,,SYN-TEC-010,火种平台,technology,外包规避型,55.2,8.4,37.9,8.9,0.0,0.6957,false,模拟数据，不对应真实企业
+,,SYN-SVC-009,聚点配送,retail_logistics_service,外包规避型,53.0,13.8,30.2,9.0,0.0,0.6957,false,模拟数据，不对应真实企业
+,,SYN-MFG-009,华晟新能源,manufacturing,快速扩张型,51.7,9.7,33.5,8.6,0.0,0.6522,false,模拟数据，不对应真实企业
